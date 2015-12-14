@@ -5,14 +5,22 @@
     <title>News News News</title>
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src='/scripts/rss.js'></script>
+    <script src='/scripts/time.js'></script>
     <!--  All other scripts should be loaded above this line.  -->
     <script src="/scripts/master.js"></script>
     <link rel='stylesheet' type="text/css" href="/styles/main.css">
 </head>
 
 <body>
-    <h3>NEWS NEWS NEWS!</h3>
-    <div class='rss', id='rss'></div>
+    <div class='topFloat'>
+        <button class='abso' id='timeTrigger'>Switch Time</button>
+        <button class='abso' id='autoTrigger'>Resume Time</button>
+    </div>
+    <header class='timeMe'>
+        <h3>NEWS NEWS NEWS</h3>
+    </header>
+    <div class='rss' , id='rss'></div>
+    <div class='timeMe randomDiv'></div>
 </body>
 
 </html>

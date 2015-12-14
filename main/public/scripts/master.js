@@ -5,6 +5,7 @@ var master = {
     */
     run: function() {
         rssReader.run();
+        classTimer.run();
     }
 };
 
