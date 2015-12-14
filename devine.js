@@ -8,18 +8,19 @@ $.ajax({
     url: "http://www.google.com/finance/info?q=goog,msft,aapl,flws,nke,ko,lnkd,p,dis,rad",
     dataType: "jsonp",
 
-    success: function( data ) {
-         console.log( data );
+    success: function (data) {
+        console.log(data);
         $.each(data, function (i, e) {
             console.log(i + ". " + e.t);
             console.log("Change: " + e.c);
             console.log("Current: " + e.l_cur);
             console.log("_________________________");
+            document.getElementById('scroll').innerHTML += e.t + " : " + e.c + " ";
         });
     }
 });
 
-function loadWeather(){
+function loadWeather() {
     request.open('GET', 'http://api.openweathermap.org/data/2.5/forecast?id=5780993&units=imperial&APPID=943239fa0e94ea682b788f358aa0a448');
     request.onload = loadComplete;
     request.send();
@@ -37,14 +38,19 @@ function loadComplete(evt) {
 
 function clockTicker() {
     var now = new Date();
-    months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; 
+    months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     time = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
     date = months[now.getMonth()] + ", " + now.getDate() + " " + now.getFullYear();
-    
+
     document.getElementById('time').innerHTML = time + " " + date;
 }
-
+//-----------------------------------------------------------------------
+function scroll(){
+    document.getElementById('time').style.left = '200px';
+    document.getElementById('time').style.position = 'absolute';
+}
+//-----------------------------------------------------------------------
 var clock = setInterval(clockTicker, 1000);
-var weatherTicker = setInterval(loadWeather,60000);
+var weatherTicker = setInterval(loadWeather, 60000);
 
 loadWeather();
