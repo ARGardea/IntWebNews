@@ -40,20 +40,30 @@ function loadComplete(evt) {
     for (i = 0; i < 5; i++) {
         var so = new Date(weatherData.list[i].dt * 1000);
         var dayDiv = document.createElement('div');
-        
-        var wd = document.createTextNode(weatherData.list[i].weather[0].description);
-        var d = document.createTextNode(months[so.getMonth()] + " " + so.getDate());
-        var hum = document.createTextNode('Humidity: ' + weatherData.list[i].humidity + "%");
-        var tem = document.createTextNode('Temp: ' + weatherData.list[i].temp.max + "F°");
-        
+
+        var wd = makeSpan('description', weatherData.list[i].weather[0].description);
+        var d = makeSpan('date', months[so.getMonth()] + " " + so.getDate());
+        var hum = makeSpan('humidity', 'Humidity: ' + weatherData.list[i].humidity + "%");
+        var tem = makeSpan('temp', 'Temp: ' + weatherData.list[i].temp.max + "F°");
+        var ima = document.createElement('img');
+        ima.setAttribute('src', 'http://openweathermap.org/img/w/' + weatherData.list[i].weather[0].icon + '.png');
+
+        dayDiv.appendChild(ima);
         dayDiv.appendChild(wd);
         dayDiv.appendChild(d);
         dayDiv.appendChild(hum);
         dayDiv.appendChild(tem);
-        
+
         document.getElementById('weather').appendChild(dayDiv);
-        
+
     }
+}
+
+function makeSpan(className, textAdded) {
+    var span = document.createElement('span');
+    span.setAttribute('class', className);
+    span.innerHTML = textAdded;
+    return span;
 }
 
 function clockTicker() {
