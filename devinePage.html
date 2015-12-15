@@ -8,31 +8,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src='devine.js'></script>
     <div id="scroll"></div>
-    <h1 id='stock1'></h1>
-    <p id='lcur1'></p>
-    <h1 id='stock2'></h1>
-    <p id='lcur2'></p>
-    <h1 id='stock3'></h1>
-    <p id='lcur3'></p>
-    <h1 id='stock4'></h1>
-    <p id='lcur4'></p>
-    <h1 id='stock5'></h1>
-    <p id='lcur5'></p>
-    <h1 id='stock6'></h1>
-    <p id='lcur6'></p>
-    <h1 id='stock7'></h1>
-    <p id='lcur7'></p>
-    <h1 id='stock8'></h1>
-    <p id='lcur8'></p>
-    <h1 id='stock9'></h1>
-    <p id='lcur9'></p>
-    <h1 id='stock10'></h1>
-    <p id='lcur10'></p>
-
-    <h1 id='date'></h1>
-    <h2 id='wDescription'></h2>
-    <h2 id='humidity'></h2>
-    <h2 id='temp'></h2>
+    
+    <h3>Enter a City Name!</h3>
+    <input id='cityName' type="text">
+    <input onclick="setCity(document.getElementById('cityName').value)" type="button" value="Find your city" />
+    
+    <h1 id='curCity'></h1>
+    <div id='weather'></div>
     <h3 id='time'></h3>
 </Body>
 
