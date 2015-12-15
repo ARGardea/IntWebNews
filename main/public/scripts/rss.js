@@ -25,13 +25,15 @@ var rssReader = (function () {
                     rssReader.makeBreak(newDiv);
                     rssReader.addBit('span', 'pubSpan', newDiv, 'Published ' + entry.publishedDate);
                     rssReader.makeBreak(newDiv);
-                    rssReader.addBit('span', 'snipSpan', newDiv, entry.contentSnippet);
 
-                    rssReader.makeBreak(newDiv);
+                    var newBit = document.createElement('p');
+                    newBit.setAttribute('class', 'snipP');
+                    newBit.innerHTML = entry.contentSnippet;
                     var anchorBit = document.createElement('a');
                     anchorBit.setAttribute('href', entry.link);
-                    anchorBit.innerHTML = 'Read More';
-                    newDiv.appendChild(anchorBit);
+                    anchorBit.innerHTML = ' Read more';
+                    newBit.appendChild(anchorBit);
+                    newDiv.appendChild(newBit);
 
                     targetDiv.appendChild(newDiv);
                 });
