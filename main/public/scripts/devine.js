@@ -11,10 +11,6 @@ $.ajax({
     success: function (data) {
         console.log(data);
         $.each(data, function (i, e) {
-            console.log(i + ". " + e.t);
-            console.log("Change: " + e.c);
-            console.log("Current: " + e.l_cur);
-            console.log("_________________________");
             document.getElementById('scroll').innerHTML += e.t + " : " + e.c + " ";
         });
     }
@@ -45,11 +41,22 @@ function clockTicker() {
     document.getElementById('time').innerHTML = time + " " + date;
 }
 //-----------------------------------------------------------------------
-function scroll(){
-    document.getElementById('time').style.left = '200px';
-    document.getElementById('time').style.position = 'absolute';
+var winHeight = $(window).width();
+
+function scroll() {
+    winHeight -= 1;
+    var scroller = document.getElementById('scroll');
+    var scrollerSize = getComputedStyle(scroller).width;
+    scroller.style.left = winHeight + 'px';
+    scroller.style.whiteSpace = 'nowrap';
+    scroller.style.position = 'absolute';
+    if (scroller.style.left == '-1000px') {
+        winHeight = $(window).width();
+        scroller.style.left = winHeight + 'px';
+    }
 }
 //-----------------------------------------------------------------------
+var scroller = setInterval(scroll, 10);
 var clock = setInterval(clockTicker, 1000);
 var weatherTicker = setInterval(loadWeather, 60000);
 

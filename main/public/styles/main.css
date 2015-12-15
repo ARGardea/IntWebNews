@@ -1,19 +1,143 @@
-header {
-    margin-top: 30px;
+body {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    color: lightgray;
+    margin: 0px;
+    top: 0px;
+    overflow-y: scroll;
+    position: relative;
 }
 
-header.day {
-    background-color: moccasin;
+body.day {
+    background: linear-gradient(to bottom, #007CBD 0%, #122F3D 100%);
+}
+
+body.night {
+    background: -moz-linear-gradient(top, #401470 0%, #110024 100%);
+    background: -webkit-linear-gradient(top, #401470 0%, #110024 100%);
+    background: linear-gradient(to bottom, #401470 0%, #110024 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#401470', endColorstr='#110024', GradientType=0);
+}
+
+div.main {
+    max-width: 80%;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #A49CAD;
+    border-radius: 5px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: rgba(70, 62, 79, 0.4);
+    padding: 20px 0px;
+}
+
+img.logo {
+    max-width: 150px;
+}
+
+div.main.night {
+    border: 2px solid;
+    border-color: darkviolet;
+    border-bottom: none;
+}
+
+button {
+    background-color: #2E203D;
+    border-color: lavender;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+}
+
+button:hover {
+    background-color: #5B00BD;
+}
+
+button.day {
+    background-color: #001824;
+}
+
+button.day:hover {
+    background-color: #007CBD;
+}
+
+div.weather {
+    font-size: 12pt;
+}
+
+div.stocks {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    min-height: 20px;
+}
+
+div.stocks.day {
     color: black;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+div.stocks.night {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+div.rssBit {
+    /*    max-width: 200px;*/
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+header {
+    position: relative;
+    text-align: center;
+    top: 60px;
+    min-height: 100px;
+    padding: 20px 0px;
 }
 
 header.night {
-    background-color: midnightblue;
-    color: white;
+}
+
+h3 {
+    margin: 0px;
+}
+
+header.day {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 3px solid;
+    border-color: darkorange;
+    border-left: none;
+    border-right: none;
+    color: darkorange;
+}
+
+header.night {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: black;
 }
 
 button.abso {
     display: inline-block;
+}
+
+p.snipP a {
+    color: #969500;
+}
+
+p.snipP {
+    margin-bottom: 0px;
+}
+
+p.snipP a:hover {
+    color: #D9D700;
+}
+
+p.snipP {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 div.topFloat {
@@ -26,27 +150,28 @@ div.topFloat {
 }
 
 div.rss {
-    width: 50%;
-    max-width: 400px;
+    /*    width: 50%;*/
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
 }
 
-div.rss a{
+div.rss a {
     text-decoration: none;
 }
 
-span.titleSpan{
-    font-weight: bold;
+span.titleSpan {
+    font-weight: 500;
+    font-size: 16pt;
 }
 
-span.pubSpan{
+span.pubSpan {
     font-style: italic;
     font-weight: 100;
     font-size: 10pt;
 }
 
-p.snipSpan{
+p.snipSpan {
     margin-left: 20px;
     margin-bottom: 0px;
     margin-top: 0px;

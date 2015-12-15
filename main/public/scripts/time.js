@@ -4,12 +4,14 @@ var classTimer = (function () {
     return {
         manualMode: false,
         setup: function () {
+            dayTime = true;
             this.checkTime();
             setInterval(classTimer.update, 1000);
             document.getElementById('timeTrigger').onclick = this.triggerManual;
             document.getElementById('autoTrigger').onclick = this.triggerAuto;
         },
         checkTime: function () {
+            console.log('CHECK TIME');
             var currentHour = new Date().getHours();
             console.log(currentHour);
             if (currentHour >= 5 && currentHour < 17) {
